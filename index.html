@@ -8,9 +8,34 @@
 		<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">		
 		<link rel="stylesheet" href="_assets/css/jqm-demos.css">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+		<link rel="stylesheet" href="css/gmaps/style.css">
 		<script src="js/jquery.js"></script>
 		<script src="_assets/js/index.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+				<script type="text/javascript"
+      		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQiIEvmILIkRuDKGJWtckqxYCghcUpZFM">
+    	</script>
+		<script>
+			$( document ).on( "pagecreate", "#map-page", function() {
+			    console.log("#map-page loaded...");
+					var helsinki = new google.maps.LatLng(60.1708, 24.9375);
+
+					map = new google.maps.Map(document.getElementById('map-canvas'), {
+						center: helsinki,
+						zoom: 15
+					});
+
+					layer = new google.maps.FusionTablesLayer({
+						query: {
+			  			select: 'Location',
+			  			from: '1iwWKdhdFqU-rePhSnRmtOEMvjTQI3rwEinxUWMpL'
+						}
+					});
+					layer.setMap(map);
+			});
+     	//function initialize() {
+		//google.maps.event.addDomListener(window, 'load', initialize);
+    	</script>
 	</head>
 	<body>
 		<div data-role="page" id="page" data-theme="b">
