@@ -16,7 +16,7 @@
       		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQiIEvmILIkRuDKGJWtckqxYCghcUpZFM">
     	</script>
 		<script>
-			$( document ).on( "pagecreate", "#map-page", function() {
+			$( document ).on( "pageshow", "#map-page", function() {
 			    console.log("#map-page loaded...");
 					var helsinki = new google.maps.LatLng(60.1708, 24.9375);
 
